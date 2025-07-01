@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="header">Portfolio Builder</h1>
+    <p>by Harish</p>
+  </header>
+    
+  <div class="main-container">
+    <div class="form-container">
+      <h2>Create Your Own Portfolio</h2>
+
+      <input type="text" id="name" placeholder="Your Name" />
+      <textarea id="bio" placeholder="Short Bio"></textarea>
+
+      <input type="text" id="skills" placeholder="Skills (comma-separated)" />
+
+      <textarea id="education" placeholder="Education"></textarea>
+
+      <input type="text" id="experience" placeholder="Work Experience" />
+
+      <input type="text" id="projectTitle" placeholder="Project Title" />
+      <textarea id="projectDesc" placeholder="Project Description"></textarea>
+
+      <input type="url" id="linkedin" placeholder="LinkedIn URL" />
+      <input type="url" id="github" placeholder="GitHub URL" />
+
+      <label for="colorPicker">Select Theme Color:</label>
+      <input type="color" id="colorPicker" value="#007bff" />
+      <div class="date-toggle">
+     <label>
+       Show date
+     </label>
+     <input type="checkbox" id="toggleDate" checked>
+      </div>
+
+
+      <div class="button-group">
+        <button onclick="updatePreview()">Preview</button>
+        <button onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+
+    <div class="preview-container" id="preview">
+      <p id="date"></p>
+      <h1 id="previewName">Your Name</h1>
+      <p id="previewBio">Short bio will appear here.</p>
+
+      <h3>Skills</h3>
+      <ul id="previewSkills"></ul>
+
+      <h3>Education</h3>
+      <p id="previewEducation"></p>
+
+      <h3>Work Experience</h3>
+      <p id="previewExperience"></p>
+
+      <h3>Project</h3>
+      <p><strong id="previewProjectTitle"></strong></p>
+      <p id="previewProjectDesc"></p>
+
+      <h3>Links</h3>
+      <ul id="previewLinks"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
