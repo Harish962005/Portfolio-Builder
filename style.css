@@ -3,6 +3,9 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #f2f4f7;
   color: #333;
+   animation:  gradient 10s linear infinite;
+  background: linear-gradient(270deg, #007bff, #00ffa2, #a8ff3f, #007bff);
+  background-size: 600% 600%;
 }
 #header {
   background: #007bff;
@@ -27,6 +30,25 @@ header p{
   gap: 2rem;
   padding: 2rem;
   justify-content: center;
+ 
+  
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% ;
+  }
+  25% {
+    background-position: 50% ;
+  }
+  50% {
+    background-position: 100% ;
+  }
+  75% {
+    background-position: 50% ;
+  }
+  100% {
+    background-position: 0% ;
+  }
 }
 
 .form-container,
@@ -36,6 +58,7 @@ header p{
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left: #007bff 10px solid;
 }
 
 h2, h3 {
@@ -93,7 +116,7 @@ button {
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 button:focus {
@@ -118,13 +141,20 @@ button:hover {
 #previewExperience{
   border-bottom: var(--theme-color, #007bff) 2px solid
 }
+#previewEducation {
+  border-bottom: var(--theme-color, #007bff) 2px solid
+}
+#previewAbout {
+  border-bottom: var(--theme-color, #007bff) 2px solid
+}
+#previewSkills {
+  border-bottom: var(--theme-color, #007bff) 2px solid
+}
 .preview-container p,
 .preview-container li {
   margin-bottom: 0.6rem;
   line-height: 1.5;
   padding-bottom: 20px;
-  ;
-
 }
 
 #previewSkills,

@@ -22,11 +22,11 @@ function updatePreview() {
 
   // Education and experience
   document.getElementById("previewEducation").innerHTML = formatMultiline(get("education"));
-  document.getElementById("previewExperience").textContent = get("experience");
+  document.getElementById("previewExperience").innerHTML = formatMultiline(get("experience"));
 
   // Project
   document.getElementById("previewProjectTitle").textContent = get("projectTitle");
-  document.getElementById("previewProjectDesc").textContent = get("projectDesc");
+  document.getElementById("previewProjectDesc").innerHTML = formatMultiline(get("projectDesc"));
 
   // Links
   const links = document.getElementById("previewLinks");
