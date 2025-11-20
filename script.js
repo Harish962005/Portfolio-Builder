@@ -2,7 +2,21 @@
 function formatMultiline(text) {
   return String(text || "").replace(/\n/g, "<br>");
 }
- 
+let selectedFile = null;
+
+// Show small thumbnail immediately when user selects a file
+document.getElementById("profilePic").addEventListener("change", function(event) {
+    selectedFile = event.target.files[0];
+    if (selectedFile) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const thumb = document.getElementById("thumbnailPreview");
+            thumb.src = e.target.result;
+            thumb.style.display = "inline-block";
+        };
+        reader.readAsDataURL(selectedFile);
+    }
+}); 
 function updatePreview() {
   const get = id => document.getElementById(id).value;
 
@@ -57,9 +71,39 @@ function updatePreview() {
   // Theme color
   const color = get("colorPicker");
   document.getElementById("preview").style.setProperty("--theme-color", color);
+
+  //font style
+   
+   const selectedFont = document.getElementById("fontStyle").value;
+    const previewSection = document.getElementById("preview-container"); 
+    previewSection.style.fontFamily = selectedFont;
+
+  //pp
+  const img = document.getElementById("profilePreview");
+  const showPic = document.getElementById("showProfilePic").checked;
+  const shape = document.getElementById("picShape").value;
+    if (selectedFile && showPic) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            img.src = e.target.result;
+            img.style.display = "block";
+
+            img.className = ""; 
+            if (shape === "circle") img.classList.add("pic-circle");
+            else if (shape === "square") img.classList.add("pic-square");
+            else if (shape === "rounded") img.classList.add("pic-rounded");
+        };
+        reader.readAsDataURL(selectedFile);
+    } else {
+        img.style.display = "none"; // hide if unchecked
+    }
 }
 
 function downloadPDF() {
   const element = document.getElementById("preview");
   html2pdf().from(element).save("MyPortfolio.pdf");
 }
+
+
+
+

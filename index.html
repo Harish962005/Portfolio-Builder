@@ -15,6 +15,22 @@
   <div class="main-container">
     <div class="form-container">
       <h2>Create Your Own Portfolio</h2>
+      <label for="profilePic">Upload Profile Picture:</label>
+      <input type="file" id="profilePic" accept="image/*">
+     <br><br>
+     <img id="thumbnailPreview" width="60" height="60" style="display:none; border-radius:5px; margin-left:10px;">
+     <br><br>
+     <label for="picShape">Choose shape:</label>
+<select id="picShape">
+  <option value="circle">Circle</option>
+  <option value="square">Square</option>
+  <option value="rounded">Rounded</option>
+</select>
+     <div class="pptoggle">
+      <label for="showProfilePic">Show profile picture</label>
+     <input type="checkbox" id="showProfilePic" checked>
+     
+      </div>
 
       <input type="text" id="name" placeholder="Your Name" />
       <textarea id="bio" placeholder="Short Bio"></textarea>
@@ -34,6 +50,15 @@
       <label for="colorPicker">Select Theme Color:</label>
       <input type="color" id="colorPicker" value="#007bff" />
       <div class="date-toggle">
+        <label for="fontStyle">Choose Font Style:</label>
+<select id="fontStyle">
+  <option value="'Arial', 'sans-serif'">Arial</option>
+  <option value="'Times New Roman', serif">Times New Roman</option>
+  <option value="Georgia, serif">Georgia</option>
+  <option value="'Courier New', monospace">Courier New</option>
+  <option value="Verdana, sans-serif">Verdana</option>
+</select>
+
      <label>
        Show date
      </label>
@@ -49,6 +74,7 @@
 
     <div class="preview-container" id="preview">
       <p id="date"></p>
+      <img id="profilePreview" width="200" height="200" style="display:none;">
       <h1 id="previewName">Your Name</h1>
       <p id="previewBio">Short bio will appear here.</p>
 
